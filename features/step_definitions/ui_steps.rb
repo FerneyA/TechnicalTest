@@ -44,6 +44,11 @@ Then('all negative numbers in the table should be red') do
   end
 end
 
+Then('I should see a message {string}') do |expected_message|
+  actual_message = @login_page.get_message
+  expect(actual_message).to eq(expected_message)
+end
+
 
 
 

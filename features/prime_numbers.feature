@@ -6,6 +6,11 @@ Feature: Prime Number Validation
     Then the prime number result should be "<result>"
 
     Examples:
-      | number | result     |
-      | 2      | Verdadero  |
-      | 4      | Falso      |
+      | number | result    |
+      | -7     | Falso     |
+      | 0      | Falso     |
+      | 2      | Verdadero |
+      | 4      | Falso     |
+      | 17     | Verdadero |
+
+

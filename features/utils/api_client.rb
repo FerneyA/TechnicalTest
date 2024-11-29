@@ -9,6 +9,7 @@ class APIClient
   end
 
   def get_user(id)
-    self.class.get("#{BASE_URL}/users/#{id}", headers: HEADERS)
+    url = "#{BASE_URL}/users/#{id}"
+    self.class.get(url, headers: HEADERS)
   end
 end

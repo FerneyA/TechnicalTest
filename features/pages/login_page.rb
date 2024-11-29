@@ -10,4 +10,8 @@ class LoginPage
     fill_in 'password', with: password
     click_button 'log-in'
   end
+
+  def get_message
+    find(:xpath, '//div[contains(@id,"random_id")]').text.strip
+  end
 end

@@ -1,14 +1,16 @@
-Feature: Login and Dashboard Verification
+Feature: Login functionality
 
-  Scenario: Validate dashboard information
+  Scenario Outline: User attempts to login with different credentials
     Given I am on the login page
-    When I login with username "testuser" and password "testpassword"
-    Then I should be redirected to the dashboard: "https://demo.applitools.com/hackathonAppV2.html"
-    And I should see a table with 6 transactions
-    And the Total balance should display "$350"
-    And the Credit Available should display "$17,800"
-    And all positive numbers in the table should be green
-    And all negative numbers in the table should be red
+    When I login with username "<username>" and password "<password>"
+    Then I should see a message "<message>"
+
+    Examples:
+      | username  | password     | message                                 |
+      |           | testpassword | Username must be present                |
+      | testuser  |              | Password must be present                |
+      |           |              | Please enter both username and password |
+      | incorrect | incorrect    | Username o Password incorrect           |
 
 
 
