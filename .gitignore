@@ -1,0 +1,30 @@
+# Archivos y directorios de Ruby y Bundler
+/.bundle
+/vendor/
+*.gem
+*.rbc
+.rspec
+*.log
+
+# Archivos de pruebas y reportes
+/report/
+*.json
+*.xml
+*.html
+
+# Configuraciones locales y temporales
+.env
+/.idea/
+/*.swp
+*.tmp
+*.bak
+*.old
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos relacionados con CI/CD
+/coverage/
+/.tmp/
+*.retry
