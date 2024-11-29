@@ -31,7 +31,6 @@ end
 Then('all positive numbers in the table should be green') do
   @dashboard_page = DashboardPage.new
   positive_cells = @dashboard_page.get_positive_values_colors
-  puts "Positive Cells Found: #{positive_cells.join(', ')}" # Depuración
   positive_cells.each do |cell|
     expect(cell).to have_css('.text-success'), "Cell with value #{cell.text.strip} is not green"
   end
@@ -40,7 +39,6 @@ end
 Then('all negative numbers in the table should be red') do
   @dashboard_page = DashboardPage.new
   negative_cells = @dashboard_page.get_negative_values_colors
-  puts "Negative Cells Found: #{negative_cells.join(', ')}" # Depuración
   negative_cells.each do |cell|
     expect(cell).to have_css('.text-danger'), "Cell with value #{cell.text.strip} is not red"
   end

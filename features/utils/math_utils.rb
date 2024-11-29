@@ -5,6 +5,32 @@ class MathUtils
   end
 
   def self.fibonacci(n)
-    (0..n).inject([0, 1]) { |fib| fib << fib[-2] + fib[-1] }[0..n]
+    return [] if n < 0
+    return [0] if n == 0
+    return [0, 1] if n == 1
+
+    fib = [0, 1]
+    (2...n).each { fib << fib[-2] + fib[-1] }
+    fib
+  end
+
+  def self.sort_words(sentence)
+    sentence.split.sort_by(&:downcase).join(' ')
+  end
+
+  def self.palindrome?(word)
+    normalized = word.downcase.gsub(/\W/, '')
+    normalized == normalized.reverse ? "Verdadero" : "Falso"
+  end
+
+  def self.two_sum(nums, target)
+    seen = {}
+    nums.each do |num|
+      complement = target - num
+      return [complement, num] if seen[complement]
+
+      seen[num] = true
+    end
+    nil
   end
 end
